@@ -8,7 +8,7 @@ function discoverMovie(kind, genreId, language) {
 }
 
 function moviedbApiCall(kind, genreId, language) {
-  return axios.get(`https://api.themoviedb.org/3/discover/${kind}&language=fr`, {
+  return axios.get(`https://api.themoviedb.org/3/discover/${kind}`, {
     params: {
       api_key: config.MOVIEDB_TOKEN,
       sort_by: 'popularity.desc',
@@ -43,7 +43,7 @@ function apiResultToCarousselle(results) {
         title: 'Voir plus',
       },
     ],
-  }));
+  },console.log(e)));
 
   return [
     {
@@ -51,7 +51,8 @@ function apiResultToCarousselle(results) {
       content: "Regarde ce que j'ai trouvé pour toi !",
     },
     { type: 'carousel', content: cards },
-  ];
+  ]
+  ;
 }
 
 module.exports = {
