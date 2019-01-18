@@ -8,7 +8,7 @@ function loadMovieRoute(app) {
     const movie = req.body.conversation.memory['film'];
     const tv = req.body.conversation.memory['serie'];
 
-    const kind = movie ? 'film' : 'serie';
+    const kind = movie ? 'movie' : 'tv';
 
     const genre = req.body.conversation.memory['genre'];
     const genreId = constants.getGenreId(genre.value);
