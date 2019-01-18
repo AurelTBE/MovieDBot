@@ -15,6 +15,7 @@ function moviedbApiCall(kind, genreId, language) {
       include_adult: false,
       with_genres: genreId,
       with_original_language: language,
+      language: 'fr-FR',
     },
   });
 }
@@ -35,7 +36,7 @@ function apiResultToCarousselle(results) {
   const cards = results.slice(0, 10).map(e => ({
     title: e.title || e.name,
     subtitle: e.overview,
-    imageUrl: `https://image.tmdb.org/t/p/w600_and_h900_bestv2${e.poster_path}&language=fr-FR`,
+    imageUrl: `https://image.tmdb.org/t/p/w600_and_h900_bestv2${e.poster_path}`,
     buttons: [
       {
         type: 'web_url',
