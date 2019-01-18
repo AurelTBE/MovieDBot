@@ -1,0 +1,37 @@
+const config = require('../config');
+const { discoverMovie } = require('./movieApi');
+const constants = require('./constants');
+
+function loadMovieRoute(app) {
+  app.post('/discover-movies', function(req, res) {
+    console.log('[GET] /discover-movies');
+    const movie = req.body.conversation.memory['film'];
+    const tv = req.body.conversation.memory['serie'];
+
+    const kind = movie ? 'film' : 'serie';
+
+    const genre = req.body.conversation.memory['genre'];
+    const genreId = constants.getGenreId(genre.value);
+
+    const language = req.body.conversation.memory['language'];
+    const nationality = req.body.conversation.memory['nationality'];
+
+    const isoCode = language
+      ? language.short.toLowerCase()
+      : nationality.short.toLowerCase();
+
+    return discoverMovie(kind, genreId, isoCode)
+      .then(function(carouselle) {
+        res.json({
+          replies: carouselle,
+          conversation: {
+          }
+        });
+      })
+      .catch(function(err) {
+        console.error('movieApi::discoverMovie error: ', err);
+      });
+  });
+}
+
+module.exports = loadMovieRoute;

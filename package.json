@@ -4,8 +4,8 @@
   "description": "Chatbot de recherche de film et séries",
   "main": "index.js",
   "scripts": {
-    "test": "test",
-    "start": "start"
+    "start": "node index.js",
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
