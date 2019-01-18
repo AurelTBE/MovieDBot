@@ -35,7 +35,7 @@ function apiResultToCarousselle(results) {
   const cards = results.slice(0, 10).map(e => ({
     title: e.title || e.name,
     subtitle: e.overview,
-    imageUrl: `https://image.tmdb.org/t/p/w600_and_h900_bestv2${e.poster_path}`,
+    imageUrl: `https://image.tmdb.org/t/p/w600_and_h900_bestv2${e.poster_path}&language=fr-FR`,
     buttons: [
       {
         type: 'web_url',
@@ -43,7 +43,7 @@ function apiResultToCarousselle(results) {
         title: 'Voir plus',
       },
     ],
-  },console.log(e)));
+  }));
 
   return [
     {
