@@ -1,0 +1,30 @@
+{
+  "name": "movie-bot",
+  "version": "1.0.0",
+  "description": "Chatbot de recherche de film et séries",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AurelTBE/MovieDBot.git"
+  },
+  "keywords": [
+    "film",
+    "serie",
+    "tv"
+  ],
+  "author": "AurélienT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AurelTBE/MovieDBot/issues"
+  },
+  "homepage": "https://github.com/AurelTBE/MovieDBot#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
