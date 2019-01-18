@@ -49,7 +49,7 @@ function apiResultToCarousselle(results) {
   return [
     {
       type: 'text',
-      content: "Regarde ce que j'ai trouvé pour toi !",
+      content: "Regarde ce que j'ai trouvé pour toi ! :)",
     },
     { type: 'carousel', content: cards },
   ]
